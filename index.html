@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=https://www.instagram.com/mitawa_coffee_y_talleres/">
+  <title>Redirecting to Instagram...</title>
+  <script>
+    // Detecta el idioma del navegador
+    const lang = navigator.language || navigator.userLanguage;
+
+    // Define mensajes por idioma
+    const messages = {
+      es: 'Si no te redirige automáticamente, haz clic <a href="https://www.instagram.com/mitawa_coffee_y_talleres/">aquí</a>.',
+      en: 'If you are not redirected automatically, click <a href="https://www.instagram.com/mitawa_coffee_y_talleres/">here</a>.'
+    };
+
+    // Escoge el mensaje según idioma
+    const msg = lang.startsWith('es') ? messages.es : messages.en;
+
+    // Escribe el mensaje en body
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.innerHTML = `<p>${msg}</p>`;
+    });
+  </script>
+</head>
+<body>
+</body>
+</html>
