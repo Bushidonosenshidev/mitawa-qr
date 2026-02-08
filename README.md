@@ -11,3 +11,17 @@ Instrucciones de uso:
 1. Subir index.html al repositorio.
 2. Activar GitHub Pages desde la rama principal.
 3. Usar el enlace generado por GitHub Pages para crear el QR.
+
+# mitawa-qr
+QR code redirecting to Mitawa Coffee & Talleres Instagram profile via GitHub Pages.
+
+This repository contains a simple redirect page that points to the Instagram profile of Mitawa Coffee & Talleres.
+When users scan the QR code generated with the GitHub Pages link, they are automatically taken to the Instagram profile, avoiding compatibility issues with QR scanners on Android devices (Samsung, Xiaomi, etc.) and iOS.
+
+Structure:
+- index.html: redirect page to the Instagram profile.
+
+Usage Instructions:
+1. Upload index.html to the repository.
+2. Enable GitHub Pages from the main branch.
+3. Use the GitHub Pages link to generate the QR code.
