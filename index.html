@@ -2,24 +2,34 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://www.instagram.com/mitawa_coffee_y_talleres/">
-  <title>Redirecting to Instagram...</title>
+  <title>Redirigiendo a Instagram...</title>
   <script>
-    // Detecta el idioma del navegador
+    // Usuario de Instagram
+    const username = "mitawa_coffee_y_talleres";
+
+    // Detectar idioma
     const lang = navigator.language || navigator.userLanguage;
-
-    // Define mensajes por idioma
     const messages = {
-      es: 'Si no te redirige automáticamente, haz clic <a href="https://www.instagram.com/mitawa_coffee_y_talleres/">aquí</a>.',
-      en: 'If you are not redirected automatically, click <a href="https://www.instagram.com/mitawa_coffee_y_talleres/">here</a>.'
+      es: `Si no se abre la app, haz clic <a href="https://www.instagram.com/${username}/">aquí</a> para abrir en el navegador.`,
+      en: `If the app doesn't open, click <a href="https://www.instagram.com/${username}/">here</a> to open in the browser.`
     };
-
-    // Escoge el mensaje según idioma
     const msg = lang.startsWith('es') ? messages.es : messages.en;
 
-    // Escribe el mensaje en body
+    // Detectar Android
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    // Redirigir
+    if (isAndroid) {
+      // Intent para abrir Instagram app en Android
+      window.location.href = `intent://instagram.com/_u/${username}/#Intent;package=com.instagram.android;scheme=https;end;`;
+    } else {
+      // Redirige al navegador
+      window.location.href = `https://www.instagram.com/${username}/`;
+    }
+
+    // Mostrar mensaje de respaldo
     document.addEventListener('DOMContentLoaded', () => {
-      document.body.innerHTML = `<p>${msg}</p>`;
+      document.body.innerHTML = `<p style="font-family:sans-serif;font-size:18px;">${msg}</p>`;
     });
   </script>
 </head>
